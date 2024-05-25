@@ -1,9 +1,9 @@
-import { ScrollView } from "react-native"
+import { ScrollView } from 'react-native'
 
-import { services } from "@/services"
+import { services } from '@/services'
 
-import { styles } from "./styles"
-import { Ingredient, IngredientsProps } from "@/components/Ingredient"
+import { styles } from './styles'
+import { Ingredient, IngredientsProps } from '@/components/Ingredient'
 
 type Props = {
   ingredients: IngredientsProps[]
