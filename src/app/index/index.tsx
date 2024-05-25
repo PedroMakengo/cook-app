@@ -6,7 +6,7 @@ export default function Index() {
     <View style={styles.container}>
       <Text style={styles.title}>Escolha os produtos</Text>
       <Text style={styles.subtitle}>
-        Descobra as receitas baseadasnos produtos que você escolheu.
+        Descobra as receitas baseadas nos produtos que você escolheu.
       </Text>
     </View>
   )
