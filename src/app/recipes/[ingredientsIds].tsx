@@ -31,25 +31,31 @@ export default function Recipes() {
           size={32}
           onPress={() => router.back()}
         />
-        <Text style={styles.title}>Ingredientes</Text>
+        <Text style={styles.title}>Ingredientes {recipes.length}</Text>
       </View>
 
       <Ingredients ingredients={ingredients} />
 
-      <FlatList
-        data={recipes}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Recipe
-            recipe={item}
-            onPress={() => router.navigate('/recipe/' + item.id)}
-          />
-        )}
-        style={styles.recipes}
-        contentContainerStyle={styles.recipesContent}
-        columnWrapperStyle={{ gap: 16 }}
-        numColumns={2}
-      />
+      {recipes.length > 0 ? (
+        <FlatList
+          data={recipes}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <Recipe
+              recipe={item}
+              onPress={() => router.navigate('/recipe/' + item.id)}
+            />
+          )}
+          style={styles.recipes}
+          contentContainerStyle={styles.recipesContent}
+          columnWrapperStyle={{ gap: 16 }}
+          numColumns={2}
+        />
+      ) : (
+        <View>
+          <Text>Não existe receitas</Text>
+        </View>
+      )}
     </View>
   )
 }
